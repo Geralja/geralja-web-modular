@@ -9,7 +9,7 @@ import uvicorn
 
 # 1. Limiter Global (Proteção contra Brute Force e DoS)
 limiter = Limiter(key_func=get_remote_address)
-
+seguranca.py
 app = FastAPI(title="GeralJá API", version="1.0.0")
 app.state.limiter = limiter
 app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
